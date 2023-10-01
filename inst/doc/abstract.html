@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Abstract</title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+</head>
+<body>
+<div class="include-before">
+</div>
+<div class="frontmatter">
+<div class="title"><h1>Abstract</h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<h1 id="title">Title</h1>
+<p><strong>Penalised regression with multiple sources of prior effects</strong></p>
+<h1 id="authors">Authors</h1>
+<p><strong>Armin Rauschenberger</strong>$~^{1,a}$ <a href="https://orcid.org/0000-0001-6498-4801"><img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="AR" /></a></p>
+<p><strong>Zied Landoulsi</strong>$~^{1}$ <a href="https://orcid.org/0000-0002-2327-3904"><img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ZL" /></a></p>
+<p><strong>Mark A. van de Wiel</strong>$~^{2,3,b}$ <a href="https://orcid.org/0000-0003-4780-8472"><img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="MvdW" /></a></p>
+<p><strong>Enrico Glaab</strong>$~^{1,b}$ <a href="https://orcid.org/0000-0003-3977-7469"><img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="EG" /></a></p>
+<p>\(^1\)Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg, Esch-sur-Alzette, Luxembourg.</p>
+<p>\(^2\)Department of Epidemiology and Data Science (EDS), Amsterdam University Medical Centers (Amsterdam UMC), Amsterdam, The Netherlands.</p>
+<p>\(^3\)Medical Research Council Biostatistics Unit (MRC BSU), University of Cambridge, Cambridge, United Kingdom.</p>
+<p>\(^{a}\)To whom correspondence should be addressed.</p>
+<p>\(^{b}\)Mark A. van de Wiel and Enrico Glaab share senior authorship.</p>
+<h1 id="abstract">Abstract</h1>
+<p>In many high-dimensional prediction or classification tasks, complementary data on the features are available, e.g. prior biological knowledge on (epi)genetic markers. Here we consider tasks with numerical prior information that provide an insight into the importance (weight) and the direction (sign) of the feature effects, e.g. regression coefficients from previous studies. We propose an approach for integrating multiple sources of such prior information into penalised regression. If suitable co-data are available, this improves the predictive performance, as shown by simulation and application. The proposed method is implemented in the R package `transreg’ (<a href="https://github.com/lcsb-bds/transreg">https://github.com/lcsb-bds/transreg</a>).</p>
+<h1 id="pre-print">Pre-print</h1>
+<p><a href="https://arxiv.org/abs/2212.08581">arXiv: 2212.08581</a> (<a href="https://arxiv.org/pdf/2212.08581.pdf">pdf</a>)</p>
+<p><a href="https://orbilu.uni.lu/handle/10993/53227">ORBi: 10993/53227</a> (<a href="https://orbilu.uni.lu/bitstream/10993/53227/1/transreg.pdf">pdf</a>)</p>
+</div>
+<div class="include-after">
+</div>
+<script src="https://cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+</body>
+</html>
