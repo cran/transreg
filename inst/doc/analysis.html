@@ -418,8 +418,8 @@ for(mode in c(&quot;ext&quot;,&quot;int&quot;)){
     both[back.nchar==3] &lt;- paste0(both[back.nchar==3],&quot;$~$&quot;)
     
     external &lt;- &quot;number of transferable source data sets ($K_a$), differences between source and target coefficients ($h$), dense setting with ridge regularisation ($s=50$, $\\alpha=0$) or sparse setting with lasso regularisation ($s=15$, $\\alpha=1$), family of distribution (`gaussian' or `binomial').&quot;
-    internal &lt;- &quot;correlation parameter for features ($\\rho_x$), correlation parameter for coefficients ($\\rho_{\\beta}$), dense setting with ridge regularisation ($\\pi=\\textcolor{blue}{3}0\\%$, $\\alpha=0$) or sparse setting with lasso regularisation ($\\pi=5\\%$, $\\alpha=1$), family of distribution (`gaussian' or `binomial').&quot;
-    caption &lt;- paste0(&quot;\\textcolor{blue}{\\sout{Testing loss in &quot;,mode,&quot;ernal simulation, as a percentage of the one from prediction by the mean.} Predictive performance in &quot;,mode,&quot;ernal simulation. In each setting (row), we simulate $10$ data sets, calculate the performance metric (mean-squared error for numerical prediction, logistic deviance for binary classification) for the test sets, express these metrics as percentages of those from prediction by the mean, and show the mean and standard deviation of these percentages.} Settings: &quot;,ifelse(mode==&quot;ext&quot;,external,ifelse(mode==&quot;int&quot;,internal,NULL)),&quot; These parameters determine (i) the \\textcolor{blue}{\\sout{average} mean} Pearson correlation\\textcolor{blue}{\\sout{s}} among the features in the target data set ($\\bar{\\rho}_x$) and (ii) the maximum Pearson correlation between the coefficients in the target data set and the coefficients in the source data sets ($\\max(\\hat{\\rho}_{\\beta})$). Methods: regularised regression (\\texttt{glmnet}), competing transfer learning method\\textcolor{blue}{s} (\\texttt{glmtrans} , \\textcolor{blue}{\\texttt{xrnet}}), proposed transfer learning method (\\texttt{transreg}) with exponential/isotonic calibration and standard/simultaneous stacking. In each setting, the colour black \\textcolor{blue}{(grey)} highlights methods that are more \\textcolor{blue}{(less)} predictive than regularised regression without transfer learning (\\texttt{glmnet}), \\textcolor{blue}{asterisks (daggers) indicate methods that are \\textit{significantly} more (less) predictive at the 5\\% level (one-sided Wilcoxon signed-rank test),} and an underline highlights the most predictive method. \\label{sim_&quot;,mode,&quot;}&quot;)
+    internal &lt;- &quot;correlation parameter for features ($\\rho_x$), correlation parameter for coefficients ($\\rho_{\\beta}$), dense setting with ridge regularisation ($\\pi=30\\%$, $\\alpha=0$) or sparse setting with lasso regularisation ($\\pi=5\\%$, $\\alpha=1$), family of distribution (`gaussian' or `binomial').&quot;
+    caption &lt;- paste0(&quot;Predictive performance in &quot;,mode,&quot;ernal simulation. In each setting (row), we simulate $10$ data sets, calculate the performance metric (mean-squared error for numerical prediction, logistic deviance for binary classification) for the test sets, express these metrics as percentages of those from prediction by the mean, and show the mean and standard deviation of these percentages. Settings: &quot;,ifelse(mode==&quot;ext&quot;,external,ifelse(mode==&quot;int&quot;,internal,NULL)),&quot; These parameters determine (i) the mean Pearson correlation among the features in the target data set ($\\bar{\\rho}_x$) and (ii) the maximum Pearson correlation between the coefficients in the target data set and the coefficients in the source data sets ($\\max(\\hat{\\rho}_{\\beta})$). Methods: regularised regression (\\texttt{glmnet}), competing transfer learning methods (\\texttt{glmtrans} , \\texttt{xrnet}), proposed transfer learning method (\\texttt{transreg}) with exponential/isotonic calibration and standard/simultaneous stacking. In each setting, the colour black (grey) highlights methods that are more (less) predictive than regularised regression without transfer learning (\\texttt{glmnet}), asterisks (daggers) indicate methods that are \\textit{significantly} more (less) predictive at the 5\\% level (one-sided Wilcoxon signed-rank test), and an underline highlights the most predictive method. \\label{sim_&quot;,mode,&quot;}&quot;)
     
     colnames(info) &lt;- sapply(colnames(info),function(x) switch(x,&quot;Ka&quot;=&quot;$K_a$&quot;,&quot;K&quot;=&quot;$K$&quot;,&quot;h&quot;=&quot;$h$&quot;,&quot;alpha&quot;=&quot;$\\alpha$&quot;,&quot;rho.x&quot;=&quot;$\\rho_x$&quot;,&quot;rho.beta&quot;=&quot;$\\rho_\\beta$&quot;,&quot;cor.x&quot;=&quot;$\\bar{\\rho}_{x}$&quot;,&quot;cor.beta&quot;=&quot;$\\max(\\hat{\\rho}_{\\beta})$&quot;,&quot;cor.t&quot;=&quot;$\\bar{\\rho}_{a}$&quot;,x))
     colnames(both) &lt;- paste0(&quot;\\texttt{&quot;,colnames(both),&quot;}&quot;)
@@ -583,7 +583,7 @@ round(100*colMeans(table[,-1]),digits=2)
 </li>
 </ul>
 <pre><code class="language-r">grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_ext.pdf&quot;),width=8,height=6,pointsize=15)
-graphics::par(mfrow=c(2,1),mar=c(2.5,3.5,0.5,0.5))
+graphics::par(mfrow=c(2,1),mar=c(2.5,2.0,0.5,0.5))
 for(k in c(&quot;grridge&quot;,&quot;fwelnet&quot;)){
   file &lt;- paste0(dir,&quot;/results/app_&quot;,k,&quot;.RData&quot;)
   if(!file.exists(file)){plot.new();next}
@@ -608,7 +608,7 @@ for(k in c(&quot;grridge&quot;,&quot;fwelnet&quot;)){
   if(grepl(pattern=&quot;fwelnet&quot;,x=k)){at &lt;- seq(from=-20,to=20,by=10)}
   labels &lt;- ifelse(at==0,&quot;0%&quot;,ifelse(at&lt;0,paste0(at,&quot;%&quot;),paste0(&quot;+&quot;,at,&quot;%&quot;)))
   graphics::axis(side=2,cex.axis=0.7,at=at,labels=labels)
-  graphics::title(ylab=&quot;change in metric&quot;,line=2.5,cex.lab=0.7)
+  #graphics::title(ylab=&quot;change in metric&quot;,line=2.5,cex.lab=0.7)
   graphics::box()
   for(i in seq_along(name)){
     palasso:::.boxplot(loss[,name[i]],at=i,invert=FALSE)
@@ -767,6 +767,120 @@ table &lt;- lapply(auc,function(x) tapply(X=x,INDEX=list(frame$cutoff,frame$alph
 grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_int.pdf&quot;),width=8,height=6,pointsize=15)
 plotter(table,cutoff,number,horizontal=TRUE)
 grDevices::dev.off()
+</code></pre>
+<p>This chunk obtains the upper \(95\%\) confidence interval of a random classifier with \(766\) controls and \(790\) cases (result: \(0.524\)).</p>
+<ul>
+<li>
+<p>input: -</p>
+</li>
+<li>
+<p>execution time: some seconds</p>
+</li>
+<li>
+<p>output: not saved</p>
+</li>
+</ul>
+<pre><code class="language-r">#--- empirical computation of confidence interval ---
+
+set.seed(1)
+auc &lt;- list()
+n &lt;- c(&quot;small&quot;,&quot;large&quot;)
+for(i in seq_along(n)){
+  auc[[i]] &lt;- numeric()
+  for(j in 1:10000){
+    if(n[i]==&quot;small&quot;){
+      y &lt;- rep(c(0,1),times=c(50,50))
+    }
+    if(n[i]==&quot;large&quot;){
+      y &lt;- rep(c(0,1),times=c(766,790))
+    }
+    x &lt;- stats::runif(n=length(y),min=0,max=1)
+    
+    auc[[i]][j] &lt;- pROC::auc(response=y,predictor=x,direction=&quot;&lt;&quot;,levels=c(0,1))
+  }
+}
+q &lt;- sapply(auc,function(x) quantile(x,probs=0.95))
+graphics::par(mar=c(3.5,3.5,1,1))
+graphics::plot.new()
+graphics::plot.window(xlim=c(0.5,length(n)+0.5),ylim=range(auc))
+graphics::box()
+graphics::axis(side=1,at=seq_along(n),labels=n)
+graphics::axis(side=2)
+for(i in seq_along(n)){
+  graphics::boxplot(x=auc[[i]],at=i,add=TRUE)
+}
+graphics::abline(h=0.5)
+graphics::title(xlab=&quot;sample size&quot;,ylab=&quot;AUC&quot;,line=2.5)
+graphics::segments(x0=seq_along(n)-0.2,x1=seq_along(n)+0.2,y0=q,col=&quot;red&quot;,lwd=2)
+graphics::text(x=seq_along(n)-0.2,y=q,labels=round(q,digits=3),pos=2,cex=0.5,col=&quot;red&quot;)
+q
+
+#--- analytical calculation of confidence interval ---
+
+# This code is based on the website &quot;Real Statistics using Excel&quot; from Charles Zaiontz, https://real-statistics.com/descriptive-statistics/roc-curve-classification-table/auc-confidence-interval/).
+
+var_AUC &lt;- function(x,n1,n2) {
+  q1 = x/(2-x)
+  q2 = 2*x^2/(1+x)
+  var = (x*(1-x) +(n1-1)*(q1-x^2) +(n2-1)*(q2-x^2))/(n1*n2)
+}
+round(0.5 + stats::qnorm(p=0.95)*sqrt(var_AUC(0.5,n1=50,n2=50)),digits=3)
+round(0.5 + stats::qnorm(p=0.95)*sqrt(var_AUC(0.5,n1=766,n2=790)),digits=3)
+</code></pre>
+<h1 id="further-research">Further research</h1>
+<p>Additional code for further research (not included in the manuscript): [see source].</p>
+<pre><code class="language-r">#--- This code chunk is not included in the manuscript! ---
+
+# The following chunk performs the additional simulation study with either linearly or non-linearly related prior effects for the comparison of transreg and xrnet.
+
+set.seed(1)
+
+temp &lt;- matrix(data=NA,nrow=10,ncol=2,dimnames=list(NULL,c(&quot;transreg&quot;,&quot;xrnet&quot;)))
+mse &lt;- list(linear=temp,nonlinear=temp)
+
+for(i in c(&quot;linear&quot;,&quot;nonlinear&quot;)){
+  for(j in 1:10){
+    
+    # simulate data
+    n0 &lt;- 100; n1 &lt;- 10000; n &lt;- n0 + n1; p &lt;- 2000
+    X &lt;- matrix(stats::rnorm(n*p),nrow=n,ncol=p)
+    beta &lt;- stats::rnorm(n=p)*stats::rbinom(n=p,size=1,prob=0.05)
+    y &lt;- stats::rnorm(n=n,mean=X %*% beta,sd=1) #sd(X %*% beta)
+    
+    # relation between prior effects and true effects
+    temp &lt;- beta + stats::rnorm(n=p)*stats::rbinom(n=p,size=1,prob=0.01)
+    # temp &lt;- beta + stats::rnorm(p,sd=0.1) # for comparison
+    if(i==&quot;linear&quot;){
+      prior &lt;- temp
+    } else if(i==&quot;nonlinear&quot;){
+      prior &lt;- sign(temp)*abs(temp)^2
+    }
+    
+    # hold-out
+    y_hat &lt;- list()
+    foldid &lt;- rep(c(0,1),times=c(n0,n1))
+    
+    # transfer learning with transreg
+    model &lt;- transreg::transreg(y=y[foldid==0],X=X[foldid==0,],prior=prior)
+    y_hat$transreg &lt;- predict(model,newx=X[foldid==1,])
+    
+    # transfer learning with xrnet
+    model &lt;- xrnet::tune_xrnet(x=X[foldid==0,],y=y[foldid==0],external=as.matrix(prior,ncol=1))
+    y_hat$xrnet &lt;- stats::predict(model,newdata=X[foldid==1,])
+    
+    # mean squared error (MSE)
+    mse[[i]][j,] &lt;- sapply(y_hat,function(x) mean((x-y[foldid==1])^2))
+    
+  }
+}
+
+# linear scenario
+sum(mse$linear[,&quot;xrnet&quot;] &lt; mse$linear[,&quot;transreg&quot;])
+stats::wilcox.test(x=mse$linear[,&quot;xrnet&quot;],y=mse$linear[,&quot;transreg&quot;],paired=TRUE)$p.value
+
+# non-linear scenario
+sum(mse$nonlinear[,&quot;transreg&quot;] &lt; mse$nonlinear[,&quot;xrnet&quot;])
+stats::wilcox.test(x=mse$nonlinear[,&quot;transreg&quot;],y=mse$nonlinear[,&quot;xrnet&quot;],paired=TRUE)$p.value
 </code></pre>
 <h1 id="acknowledgements">Acknowledgements</h1>
 <p>Reformat list of consortium members for acknowledgements: [see source].</p>
