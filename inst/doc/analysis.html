@@ -192,7 +192,9 @@ rm(pkgs)
 </li>
 </ul>
 <pre><code class="language-r">#&lt;&lt;init&gt;&gt;
-grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_example.pdf&quot;),width=8,height=5,pointsize=15)
+#grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_example.pdf&quot;),width=8,height=5,pointsize=15)
+#grDevices::png(file=paste0(dir,&quot;/manuscript/figure_example.png&quot;),width=8,height=5,units=&quot;in&quot;,pointsize=15,res=1200)
+grDevices::postscript(file=paste0(dir,&quot;/manuscript/figure_example.eps&quot;),width=8,height=5,pointsize=15,horizontal=FALSE,paper=&quot;special&quot;)
 
 set.seed(1)
 n &lt;- 200; p &lt;- 500
@@ -582,7 +584,9 @@ round(100*colMeans(table[,-1]),digits=2)
 <p>output: manuscript/figure_ext.pdf</p>
 </li>
 </ul>
-<pre><code class="language-r">grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_ext.pdf&quot;),width=8,height=6,pointsize=15)
+<pre><code class="language-r">#grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_ext.pdf&quot;),width=8,height=6,pointsize=15)
+#grDevices::png(file=paste0(dir,&quot;/manuscript/figure_ext.png&quot;),width=8,height=6,units=&quot;in&quot;,pointsize=15,res=1200)
+grDevices::postscript(file=paste0(dir,&quot;/manuscript/figure_ext.eps&quot;),width=8,height=6,pointsize=15,horizontal=FALSE,paper=&quot;special&quot;)
 graphics::par(mfrow=c(2,1),mar=c(2.5,2.0,0.5,0.5))
 for(k in c(&quot;grridge&quot;,&quot;fwelnet&quot;)){
   file &lt;- paste0(dir,&quot;/results/app_&quot;,k,&quot;.RData&quot;)
@@ -764,7 +768,9 @@ number &lt;- unique(sapply(loss,function(x) x$p))
 auc &lt;- as.data.frame(t(sapply(loss,function(x) x$auc)))
 table &lt;- lapply(auc,function(x) tapply(X=x,INDEX=list(frame$cutoff,frame$alpha),FUN=function(x) mean(x)))
 
-grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_int.pdf&quot;),width=8,height=6,pointsize=15)
+#grDevices::pdf(file=paste0(dir,&quot;/manuscript/figure_int.pdf&quot;),width=8,height=6,pointsize=15)
+#grDevices::png(file=paste0(dir,&quot;/manuscript/figure_int.png&quot;),width=8,height=6,units=&quot;in&quot;,pointsize=15,res=1200)
+grDevices::postscript(file=paste0(dir,&quot;/manuscript/figure_int.eps&quot;),width=8,height=6,pointsize=15,horizontal=FALSE,paper=&quot;special&quot;)
 plotter(table,cutoff,number,horizontal=TRUE)
 grDevices::dev.off()
 </code></pre>

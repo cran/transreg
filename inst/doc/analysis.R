@@ -20,7 +20,9 @@ knitr::opts_chunk$set(eval=FALSE,echo=TRUE)
 
 ## ----calibration,echo=TRUE----------------------------------------------------
 #  #<<init>>
-#  grDevices::pdf(file=paste0(dir,"/manuscript/figure_example.pdf"),width=8,height=5,pointsize=15)
+#  #grDevices::pdf(file=paste0(dir,"/manuscript/figure_example.pdf"),width=8,height=5,pointsize=15)
+#  #grDevices::png(file=paste0(dir,"/manuscript/figure_example.png"),width=8,height=5,units="in",pointsize=15,res=1200)
+#  grDevices::postscript(file=paste0(dir,"/manuscript/figure_example.eps"),width=8,height=5,pointsize=15,horizontal=FALSE,paper="special")
 #  
 #  set.seed(1)
 #  n <- 200; p <- 500
@@ -353,7 +355,9 @@ knitr::opts_chunk$set(eval=FALSE,echo=TRUE)
 #  round(100*colMeans(table[,-1]),digits=2)
 
 ## ----app_boxplots,echo=TRUE---------------------------------------------------
-#  grDevices::pdf(file=paste0(dir,"/manuscript/figure_ext.pdf"),width=8,height=6,pointsize=15)
+#  #grDevices::pdf(file=paste0(dir,"/manuscript/figure_ext.pdf"),width=8,height=6,pointsize=15)
+#  #grDevices::png(file=paste0(dir,"/manuscript/figure_ext.png"),width=8,height=6,units="in",pointsize=15,res=1200)
+#  grDevices::postscript(file=paste0(dir,"/manuscript/figure_ext.eps"),width=8,height=6,pointsize=15,horizontal=FALSE,paper="special")
 #  graphics::par(mfrow=c(2,1),mar=c(2.5,2.0,0.5,0.5))
 #  for(k in c("grridge","fwelnet")){
 #    file <- paste0(dir,"/results/app_",k,".RData")
@@ -512,7 +516,9 @@ knitr::opts_chunk$set(eval=FALSE,echo=TRUE)
 #  auc <- as.data.frame(t(sapply(loss,function(x) x$auc)))
 #  table <- lapply(auc,function(x) tapply(X=x,INDEX=list(frame$cutoff,frame$alpha),FUN=function(x) mean(x)))
 #  
-#  grDevices::pdf(file=paste0(dir,"/manuscript/figure_int.pdf"),width=8,height=6,pointsize=15)
+#  #grDevices::pdf(file=paste0(dir,"/manuscript/figure_int.pdf"),width=8,height=6,pointsize=15)
+#  #grDevices::png(file=paste0(dir,"/manuscript/figure_int.png"),width=8,height=6,units="in",pointsize=15,res=1200)
+#  grDevices::postscript(file=paste0(dir,"/manuscript/figure_int.eps"),width=8,height=6,pointsize=15,horizontal=FALSE,paper="special")
 #  plotter(table,cutoff,number,horizontal=TRUE)
 #  grDevices::dev.off()
 
