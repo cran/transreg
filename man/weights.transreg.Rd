@@ -7,7 +7,7 @@
 \method{weights}{transreg}(object, stack = NULL, ...)
 }
 \arguments{
-\item{object}{object of class \code{transreg}}
+\item{object}{object of class `transreg`}
 
 \item{stack}{character "sta" (standard stacking) or "sim" (simultaneous stacking)}
 
@@ -19,7 +19,7 @@ The output is a numerical vector
 with one entry for each source of co-data.
 }
 \description{
-Extracts weights from an object of class \link{transreg}.
+Extracts weights from an object of class [transreg].
 }
 \examples{
 #--- simulation ---
@@ -43,12 +43,14 @@ and
 \href{https://orcid.org/0000-0003-3977-7469}{Enrico Glaab}
 (2023).
 "Penalised regression with multiple sets of prior effects".
-\emph{Bioinformatics (In press).}
-\doi{10.1093/bioinformatics/btad680}
-\email{armin.rauschenberger@uni.lu}
+\emph{Bioinformatics} 39(12):btad680.
+\doi{10.1093/bioinformatics/btad680}.
+(Click
+\href{https://orbilu.uni.lu/bitstream/10993/53227/1/transreg.pdf}{here}
+to access PDF.)
 }
 \seealso{
 This function is about weights for sources of prior effects.
 To extract weights for features (estimated regression coefficients),
-use \code{\link[=coef]{coef()}}.
+use [coef()].
 }

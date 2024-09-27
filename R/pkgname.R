@@ -3,6 +3,8 @@
 #' @keywords documentation
 #' @docType package
 #' 
+#' @aliases transreg-package
+#' 
 #' @title
 #' Penalised regression with multiple sets of prior effects
 #' 
@@ -27,24 +29,15 @@
 #' \href{https://orcid.org/0000-0003-3977-7469}{Enrico Glaab}
 #' (2023).
 #' "Penalised regression with multiple sets of prior effects".
-#' *Bioinformatics (In press).*
-#' \doi{10.1093/bioinformatics/btad680}
-#' \email{armin.rauschenberger@uni.lu}
+#' \emph{Bioinformatics} 39(12):btad680.
+#' \doi{10.1093/bioinformatics/btad680}.
+#' (Click
+#' \href{https://orbilu.uni.lu/bitstream/10993/53227/1/transreg.pdf}{here}
+#' to access PDF.)
 #' 
 #' @examples
 #' ?transreg
 #' ?predict.transreg
 #' ?coef.transreg
 #' 
-NULL
-
-# version with ORCID logos
-# Armin Rauschenberger 
-# [![AR](orcid.png){height=10px}](https://orcid.org/0000-0001-6498-4801),
-# Zied Landoulsi
-# [![ZL](orcid.png){height=10px}](https://orcid.org/0000-0002-2327-3904),
-# Mark A. van de Wiel 
-# [![MvdW](orcid.png){height=10px}](https://orcid.org/0000-0003-4780-8472),
-# and Enrico Glaab
-# [![EG](orcid.png){height=10px}](https://orcid.org/0000-0003-3977-7469)
-# (2022).
+"_PACKAGE"

@@ -120,7 +120,7 @@ table, .body h2 { border-bottom: 1px solid #666; }
 .body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
 .footnote-ref a::before { content: "["; }
 .footnote-ref a::after { content: "]"; }
-.footnotes::before {
+section.footnotes::before {
   content: "";
   display: block;
   max-width: 20em;
@@ -140,8 +140,6 @@ table, .body h2 { border-bottom: 1px solid #666; }
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 </head>
 <body>
-<div class="include-before">
-</div>
 <div class="frontmatter">
 <div class="title"><h1>Analysis</h1></div>
 <div class="author"><h2></h2></div>
@@ -892,8 +890,6 @@ stats::wilcox.test(x=mse$nonlinear[,&quot;transreg&quot;],y=mse$nonlinear[,&quot
 <p>Reformat list of consortium members for acknowledgements: [see source].</p>
 <h1 id="session-information">Session information</h1>
 <p>Print session information.</p>
-</div>
-<div class="include-after">
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>

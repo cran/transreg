@@ -5,16 +5,16 @@
 \alias{transreg-package}
 \title{Penalised regression with multiple sets of prior effects}
 \description{
-The R package \code{transreg} implements penalised regression
+The R package `transreg` implements penalised regression
 with multiple sets of prior effects.
 }
 \details{
-Use function \code{\link[=transreg]{transreg()}} for model fitting.
-Type \code{library(transreg)} and then \code{?transreg} or
-\code{help("transreg")} to open its help file.
+Use function [transreg()] for model fitting.
+Type `library(transreg)` and then `?transreg` or
+`help("transreg")` to open its help file.
 
 See the vignette for further examples.
-Type \code{vignette("transreg")} or \code{browseVignettes("transreg")}
+Type `vignette("transreg")` or `browseVignettes("transreg")`
 to open the vignette.
 }
 \examples{
@@ -31,8 +31,23 @@ and
 \href{https://orcid.org/0000-0003-3977-7469}{Enrico Glaab}
 (2023).
 "Penalised regression with multiple sets of prior effects".
-\emph{Bioinformatics (In press).}
-\doi{10.1093/bioinformatics/btad680}
-\email{armin.rauschenberger@uni.lu}
+\emph{Bioinformatics} 39(12):btad680.
+\doi{10.1093/bioinformatics/btad680}.
+(Click
+\href{https://orbilu.uni.lu/bitstream/10993/53227/1/transreg.pdf}{here}
+to access PDF.)
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/rauschenberger/transreg}
+  \item \url{https://rauschenberger.github.io/transreg/}
+  \item Report bugs at \url{https://github.com/rauschenberger/transreg/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Armin Rauschenberger \email{armin.rauschenberger@uni.lu} (\href{https://orcid.org/0000-0001-6498-4801}{ORCID})
+
 }
 \keyword{documentation}
