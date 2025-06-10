@@ -377,10 +377,10 @@ coef.transreg <- function(object,stack=NULL,...){
   names <- paste0("source",seq_len(ncol(object$base$prior$beta)))
   names(omega) <- c("(Intercept)",names,"lambda.min","lambda.1se")
   p <- nrow(beta)-1
-  alpha_star <- omega["(Intercept)"] + omega["lambda.min"]*beta["(Intercept)","s1"] + omega["lambda.1se"]*beta["(Intercept)","s2"]
+  alpha_star <- omega["(Intercept)"] + omega["lambda.min"]*beta["(Intercept)","s0"] + omega["lambda.1se"]*beta["(Intercept)","s1"]
   beta_star <- rep(NA,times=p)
   for(j in seq_len(p)){
-    beta_star[j] <- sum(omega[names]*object$base$prior$beta[j,]) + omega["lambda.min"]*beta[1+j,"s1"] + omega["lambda.1se"]*beta[1+j,"s2"]
+    beta_star[j] <- sum(omega[names]*object$base$prior$beta[j,]) + omega["lambda.min"]*beta[1+j,"s0"] + omega["lambda.1se"]*beta[1+j,"s1"]
   }
   return(list(alpha=alpha_star,beta=beta_star))
 }

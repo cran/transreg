@@ -1,7 +1,7 @@
-bb2fb556791cd80f8ce7b3388c5e388e *DESCRIPTION
+611ed1ec1302fa8f41736253d09503d3 *DESCRIPTION
 a57047ade75c38821e864fa67317634e *NAMESPACE
 683b7cdc6e9b7614a94c700f42f9875f *NEWS.md
-dced80b35dd5fbae917d553e80d964a7 *R/functions.R
+8b7e702f383751aa9ace7b7cddb015cb *R/functions.R
 fdf023b83bb280873eb51e5980026154 *R/pkgname.R
 417a47d01ebc7bb8cd608240c7113b7c *README.md
 aa5e5a2cbfaea3d9b6cdbe378ac48cee *build/partial.rdb
@@ -11,7 +11,7 @@ e9dcae7a0878a4434f430751aa484ceb *inst/CITATION
 89c511325ddbc612dbd76ee6819f6e5e *inst/doc/analysis.Rmd
 9113bf7f195a0c47391865e4e2927717 *inst/doc/analysis.html
 1a9a1c409ec3aa507c48e28868e73737 *inst/doc/article.Rmd
-c248967ebc375a45ecf27c0485644b1f *inst/doc/article.html
+abeadc05d8a16936c4176aca947eec64 *inst/doc/article.html
 b9de6ea259f2e184b53c64b9e1d77858 *man/calibrate.Rd
 44ad1cb0c4f1110dc83ffd8621dbd654 *man/coef.transreg.Rd
 fb388328cad5eec14f92cf8b7bc4d96b *man/compare.Rd

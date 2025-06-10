@@ -1,5 +1,5 @@
 Package: transreg
-Version: 1.0.3
+Version: 1.0.4
 Title: Penalised Regression with Multiple Sets of Prior Effects
         ('Transfer Learning')
 Description: Improves the predictive performance of ridge and lasso regression exploiting one or more sources of prior information on the importance and direction of effects (Rauschenberger and others 2023, <doi:10.1093/bioinformatics/btad680>). For running the vignette (optional), install 'fwelnet' from 'GitHub' <https://github.com/kjytay/fwelnet>.
@@ -17,9 +17,9 @@ URL: https://github.com/rauschenberger/transreg,
         https://rauschenberger.github.io/transreg/
 BugReports: https://github.com/rauschenberger/transreg/issues
 NeedsCompilation: no
-Packaged: 2024-09-27 09:34:48 UTC; armin.rauschenberger
-Author: Armin Rauschenberger [aut, cre]
-    (<https://orcid.org/0000-0001-6498-4801>)
+Packaged: 2025-06-10 14:02:49 UTC; armin.rauschenberger
+Author: Armin Rauschenberger [aut, cre] (ORCID:
+    <https://orcid.org/0000-0001-6498-4801>)
 Maintainer: Armin Rauschenberger <armin.rauschenberger@uni.lu>
 Repository: CRAN
-Date/Publication: 2024-09-27 14:50:02 UTC
+Date/Publication: 2025-06-10 15:50:02 UTC
