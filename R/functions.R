@@ -377,10 +377,10 @@ coef.transreg <- function(object,stack=NULL,...){
   names <- paste0("source",seq_len(ncol(object$base$prior$beta)))
   names(omega) <- c("(Intercept)",names,"lambda.min","lambda.1se")
   p <- nrow(beta)-1
-  alpha_star <- omega["(Intercept)"] + omega["lambda.min"]*beta["(Intercept)","s0"] + omega["lambda.1se"]*beta["(Intercept)","s1"]
+  alpha_star <- omega["(Intercept)"] + omega["lambda.min"]*beta["(Intercept)",1] + omega["lambda.1se"]*beta["(Intercept)",2]
   beta_star <- rep(NA,times=p)
   for(j in seq_len(p)){
-    beta_star[j] <- sum(omega[names]*object$base$prior$beta[j,]) + omega["lambda.min"]*beta[1+j,"s0"] + omega["lambda.1se"]*beta[1+j,"s1"]
+    beta_star[j] <- sum(omega[names]*object$base$prior$beta[j,]) + omega["lambda.min"]*beta[1+j,1] + omega["lambda.1se"]*beta[1+j,2]
   }
   return(list(alpha=alpha_star,beta=beta_star))
 }
@@ -447,8 +447,8 @@ NULL
         glmnet <- glmnet::glmnet(x=cbind(0,eta),y=y,family=family,lambda=lambda,lower.limits=0,intercept=TRUE)
         #temp <- stats::coef(glmnet)
         temp <- glmnet::coef.glmnet(glmnet)
-        coefs[i,1] <- temp["(Intercept)","s0"]
-        coefs[i,2] <- ifelse(is.na(temp["V2","s0"]),0,temp["V2","s0"])
+        coefs[i,1] <- temp["(Intercept)",1]
+        coefs[i,2] <- ifelse(is.na(temp["V2",1]),0,temp["V2",1])
         pred[,i] <- stats::predict(glmnet,newx=cbind(0,eta),s=lambda,type="response")
       }
     }

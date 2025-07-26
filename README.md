@@ -2,6 +2,9 @@
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/rauschenberger/transreg?svg=true)](https://ci.appveyor.com/project/rauschenberger/transreg)
 [![R-CMD-check](https://github.com/rauschenberger/transreg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rauschenberger/transreg/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/rauschenberger/transreg/graph/badge.svg)](https://app.codecov.io/gh/rauschenberger/transreg)
+[![CRAN version](https://www.r-pkg.org/badges/version/transreg)](https://CRAN.R-project.org/package=transreg)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/transreg)](https://CRAN.R-project.org/package=transreg)
+[![Total CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/transreg)](https://CRAN.R-project.org/package=transreg)
 
 # Penalised regression with multiple sets of prior effects
 
@@ -41,10 +44,6 @@ and Enrico Glaab
 ## Reproducibility
 
 The code for reproducing the simulations and applications shown in the manuscript is available in a vignette (<https://lcsb-bds.github.io/transreg/articles/analysis.html>). After installing the package with `remotes::install_github("lcsb-bds/transreg",build_vignettes=TRUE)` and restarting R, the vignette can also be loaded with `vignette(topic="analysis",package="transreg")`.
-
-[![CRAN version](https://www.r-pkg.org/badges/version/transreg)](https://CRAN.R-project.org/package=transreg)
-[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/transreg)](https://CRAN.R-project.org/package=transreg)
-[![Total CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/transreg)](https://CRAN.R-project.org/package=transreg)
 
 ## Disclaimer
 
