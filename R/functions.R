@@ -576,7 +576,8 @@ NULL
     alpha <- CVXR::Variable(1)
     beta <- CVXR::Variable(p)
     constraints <- list()
-    constraints$iso <- CVXR::diff(beta)>=0
+    #constraints$iso <- CVXR::diff(beta)>=0
+    constraints$iso <- diff(beta)>=0
     if(any(prior.order<0)){
       constraints$neg <- beta[prior.order<0]<=0
     }
@@ -599,15 +600,19 @@ NULL
     
     objective <- CVXR::Minimize(loss+penalty)
     problem <- CVXR::Problem(objective=objective,constraints=constraints)
-    result <- CVXR::solve(problem)
+    #result <- CVXR::solve(problem)
+    result <- CVXR::psolve(problem)
     
-    if(result$status=="solver_error"){
+    #if(result$status=="solver_error"){
+    if(is.infinite(result)){
       warning("Solver error ...")
       ALPHA[i] <- mean(y)
       BETA[,i] <- 0
     } else {
-      ALPHA[i] <- result$getValue(alpha)
-      beta.r <- result$getValue(beta)
+      #ALPHA[i] <- result$getValue(alpha)
+      #beta.r <- result$getValue(beta)
+      ALPHA[i] <- CVXR::value(alpha)
+      beta.r <- CVXR::value(beta)
       BETA[,i] <- beta.r[order(order)]
     }
   }
